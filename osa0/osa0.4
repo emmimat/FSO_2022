@@ -1,0 +1,28 @@
+note left of käyttäjä:
+Käyttäjä kirjoittaa 
+tekstikenttään muistiinpanon
+end note
+käyttäjä->selain:Painaa tallenna nappia
+selain->palvelin:HTTP POST {muistiinpano}
+note over palvelin:
+Palvelin luo uutta muistiinpanoa 
+vastaavan olion ja laittaa sen muistiinpanot 
+sisältävään taulukkoon nimeltään notes
+end note
+note left of palvelin:
+Palvelin kehottaa selainta lataaman 
+sivun uudelleen
+end note
+palvelin->selain:status 302, location: notes
+note right of selain:
+Selain lataa sivun uudelleen
+end note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin-->selain: main.js
+note left of selain:
+Selain näyttää uudelleen ladatun
+sivun juuri lisätyn muistiinpanon kera
