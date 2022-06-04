@@ -1,0 +1,20 @@
+käyttäjä->selain:menee osoitteeseen https://studies.cs.helsinki.fi/exampleapp/spa
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+palvelin-->selain: spa.js
+note over selain
+selain suorittaa 
+spa.js koodin ja
+selain pyytää json 
+datan palvelimelta
+end note
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: muistiinpanot json muodossa
+note left of selain
+selain muuntaa raakadatan
+muistiinpanoiksi ja esittää ne 
+HTML muodossa
+end note
