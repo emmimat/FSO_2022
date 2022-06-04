@@ -1,0 +1,7 @@
+note over käyttäjä
+kirjoittaa muistiinpanon
+tekstikenttään
+end note
+käyttäjä->selain:painaa "tallenna" nappia
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+palvelin-->selain: status: 201 created
